@@ -1,0 +1,40 @@
+
+Environment variables loaded: { GEMINI_API_KEY_EXISTS: true, NODE_ENV: 'development', PORT: '3000' }
+GeminiService başlatılıyor...
+Çalışma dizini: /Users/mstdeveloper/FlutterProjeler/aiproject/server
+ENV değişkenleri: { GEMINI_API_KEY_EXISTS: true, NODE_ENV: 'development' }
+GeminiService başarıyla başlatıldı
+Server is running on localhost:3000
+Gemini API Error: TypeError: request is not iterable
+    at formatNewContent (/Users/mstdeveloper/FlutterProjeler/aiproject/server/node_modules/@google/generative-
+    at formatNewContent (/Users/mstdeveloper/FlutterProjeler/aiproject/server/node_modules/@google/generative-ai/dist/index.js:893:36)
+    at ChatSession.sendMessage (/Users/mstdeveloper/FlutterProjeler/aiproject/server/node_modules/@google/gene
+    at ChatSession.sendMessage (/Users/mstdeveloper/FlutterProjeler/aiproject/server/node_modules/@google/generative-ai/dist/index.js:1123:28)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+Controller Error: Error: İstek işlenirken bir hata oluştu
+    at GeminiService.<anonymous> (/Users/mstdeveloper/FlutterProjeler/aiproject/server/build/services/gemini_s
+    at GeminiService.<anonymous> (/Users/mstdeveloper/FlutterProjeler/aiproject/server/build/services/gemini_service.js:66:23)
+    at Generator.throw (<anonymous>)
+    at rejected (/Users/mstdeveloper/FlutterProjeler/aiproject/server/build/services/gemini_service.js:6:65)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+node:_http_outgoing:699
+    throw new ERR_HTTP_HEADERS_SENT('set');
+          ^
+
+Error [ERR_HTTP_HEADERS_SENT]: Cannot set headers after they are sent to the client
+    at ServerResponse.setHeader (node:_http_outgoing:699:11)
+    at ServerResponse.header (/Users/mstdeveloper/FlutterProjeler/aiproject/server/node_modules/express/lib/re
+    at ServerResponse.header (/Users/mstdeveloper/FlutterProjeler/aiproject/server/node_modules/express/lib/response.js:794:10)
+    at ServerResponse.send (/Users/mstdeveloper/FlutterProjeler/aiproject/server/node_modules/express/lib/resp
+    at ServerResponse.send (/Users/mstdeveloper/FlutterProjeler/aiproject/server/node_modules/express/lib/response.js:174:12)
+    at ServerResponse.json (/Users/mstdeveloper/FlutterProjeler/aiproject/server/node_modules/express/lib/resp
+    at ServerResponse.json (/Users/mstdeveloper/FlutterProjeler/aiproject/server/node_modules/express/lib/response.js:278:15)
+    at /Users/mstdeveloper/FlutterProjeler/aiproject/server/build/controllers/generate_gemini_controller.js:40
+    at /Users/mstdeveloper/FlutterProjeler/aiproject/server/build/controllers/generate_gemini_controller.js:40:25
+    at Generator.throw (<anonymous>)
+    at rejected (/Users/mstdeveloper/FlutterProjeler/aiproject/server/build/controllers/generate_gemini_contro
+    at rejected (/Users/mstdeveloper/FlutterProjeler/aiproject/server/build/controllers/generate_gemini_controller.js:6:65)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5) {
+  code: 'ERR_HTTP_HEADERS_SENT'
+}
+
