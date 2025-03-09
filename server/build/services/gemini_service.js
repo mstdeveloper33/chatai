@@ -52,8 +52,8 @@ class GeminiService {
                 if (!prompt || typeof prompt !== 'string') {
                     throw new Error('Geçersiz prompt formatı');
                 }
-                // Mesajı text olarak gönder
-                const result = yield this.chat.sendMessage([{ text: prompt }]);
+                // Doğru format: string olarak gönder
+                const result = yield this.chat.sendMessage(prompt);
                 const responseText = result.response.text();
                 const history = yield this.chat.getHistory();
                 return {

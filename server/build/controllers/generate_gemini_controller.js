@@ -15,18 +15,24 @@ const async_handler_1 = require("../middleware/async_handler");
 const geminiService = new gemini_service_1.GeminiService();
 exports.generateGeminiResponseController = (0, async_handler_1.asyncHandler)((req, res) => __awaiter(void 0, void 0, void 0, function* () {
     const { prompt } = req.body;
-    const response = yield geminiService.generateResponse(prompt);
-    res.status(200).json({
-        success: true,
-        data: {
-            message: response.text,
-            conversation: {
-                currentMessage: {
-                    role: "model",
-                    content: response.text
-                },
-                history: response.history
+    try {
+        const response = yield geminiService.generateResponse(prompt);
+        res.status(200).json({
+            success: true,
+            data: {
+                message: response.text,
+                conversation: {
+                    currentMessage: {
+                        role: "model",
+                        content: response.text
+                    },
+                    history: response.history
+                }
             }
-        }
-    });
+        });
+    }
+    catch (error) {
+        console.error("Controller Error:", error);
+        res.status(500).json({ success: false, message: "İstek işlenirken bir hata oluştu" });
+    }
 }));
