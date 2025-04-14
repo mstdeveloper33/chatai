@@ -26,7 +26,7 @@ class OnboardingScreen extends StatelessWidget {
               ),
             ),
             const SizedBox(height: 20),
-            const CircularProgressIndicator(),
+            //const CircularProgressIndicator(),
             ElevatedButton(onPressed: () {
               Navigator.push(context, MaterialPageRoute(builder: (context) => ChatPage(),),);
             }, child: const Text("Get Started"),)
